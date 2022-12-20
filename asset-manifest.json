@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.ca57846c.css",
-    "main.js": "/static/js/main.c25ffc01.js",
-    "static/js/787.ce600914.chunk.js": "/static/js/787.ce600914.chunk.js",
-    "index.html": "/index.html",
-    "main.ca57846c.css.map": "/static/css/main.ca57846c.css.map",
-    "main.c25ffc01.js.map": "/static/js/main.c25ffc01.js.map",
-    "787.ce600914.chunk.js.map": "/static/js/787.ce600914.chunk.js.map"
+    "main.css": "/MyManAy.github.io-Volunteering/static/css/main.ca57846c.css",
+    "main.js": "/MyManAy.github.io-Volunteering/static/js/main.970c8af8.js",
+    "static/js/787.ce600914.chunk.js": "/MyManAy.github.io-Volunteering/static/js/787.ce600914.chunk.js",
+    "index.html": "/MyManAy.github.io-Volunteering/index.html",
+    "main.ca57846c.css.map": "/MyManAy.github.io-Volunteering/static/css/main.ca57846c.css.map",
+    "main.970c8af8.js.map": "/MyManAy.github.io-Volunteering/static/js/main.970c8af8.js.map",
+    "787.ce600914.chunk.js.map": "/MyManAy.github.io-Volunteering/static/js/787.ce600914.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ca57846c.css",
-    "static/js/main.c25ffc01.js"
+    "static/js/main.970c8af8.js"
   ]
 }
