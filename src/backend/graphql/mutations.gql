@@ -3,3 +3,10 @@ mutation updateMoneyByUserId($id: uuid!, $newAmount: money!) {
     affected_rows
   }
 }
+
+mutation insertUserByEmail($email: String!) {
+  insert_User_one(object: { email: $email }) {
+    id
+    email
+  }
+}

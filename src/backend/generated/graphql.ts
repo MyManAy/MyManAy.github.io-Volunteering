@@ -265,8 +265,8 @@ export type String_Comparison_Exp = {
 /** columns and relationships of "User" */
 export type User = {
   __typename?: 'User';
+  email: Scalars['String'];
   id: Scalars['uuid'];
-  name: Scalars['String'];
 };
 
 /** aggregated selection of "User" */
@@ -296,13 +296,13 @@ export type User_Bool_Exp = {
   _and?: InputMaybe<Array<User_Bool_Exp>>;
   _not?: InputMaybe<User_Bool_Exp>;
   _or?: InputMaybe<Array<User_Bool_Exp>>;
+  email?: InputMaybe<String_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
-  name?: InputMaybe<String_Comparison_Exp>;
 };
 
 /** unique or primary key constraints on table "User" */
 export enum User_Constraint {
-  /** unique or primary key constraint on columns "name" */
+  /** unique or primary key constraint on columns "email" */
   UserNameKey = 'User_name_key',
   /** unique or primary key constraint on columns "id" */
   UserPkey = 'User_pkey'
@@ -310,22 +310,22 @@ export enum User_Constraint {
 
 /** input type for inserting data into table "User" */
 export type User_Insert_Input = {
+  email?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['uuid']>;
-  name?: InputMaybe<Scalars['String']>;
 };
 
 /** aggregate max on columns */
 export type User_Max_Fields = {
   __typename?: 'User_max_fields';
+  email?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
-  name?: Maybe<Scalars['String']>;
 };
 
 /** aggregate min on columns */
 export type User_Min_Fields = {
   __typename?: 'User_min_fields';
+  email?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['uuid']>;
-  name?: Maybe<Scalars['String']>;
 };
 
 /** response of any mutation on the table "User" */
@@ -346,8 +346,8 @@ export type User_On_Conflict = {
 
 /** Ordering options when selecting data from "User". */
 export type User_Order_By = {
+  email?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  name?: InputMaybe<Order_By>;
 };
 
 /** primary key columns input for table: User */
@@ -358,15 +358,15 @@ export type User_Pk_Columns_Input = {
 /** select columns of table "User" */
 export enum User_Select_Column {
   /** column name */
-  Id = 'id',
+  Email = 'email',
   /** column name */
-  Name = 'name'
+  Id = 'id'
 }
 
 /** input type for updating data in table "User" */
 export type User_Set_Input = {
+  email?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['uuid']>;
-  name?: InputMaybe<Scalars['String']>;
 };
 
 /** Streaming cursor of the table "User" */
@@ -379,16 +379,16 @@ export type User_Stream_Cursor_Input = {
 
 /** Initial value of the column from where the streaming should start */
 export type User_Stream_Cursor_Value_Input = {
+  email?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['uuid']>;
-  name?: InputMaybe<Scalars['String']>;
 };
 
 /** update columns of table "User" */
 export enum User_Update_Column {
   /** column name */
-  Id = 'id',
+  Email = 'email',
   /** column name */
-  Name = 'name'
+  Id = 'id'
 }
 
 export type User_Updates = {
@@ -724,12 +724,19 @@ export type UpdateMoneyByUserIdMutationVariables = Exact<{
 
 export type UpdateMoneyByUserIdMutation = { __typename?: 'mutation_root', update_Money?: { __typename?: 'Money_mutation_response', affected_rows: number } | null };
 
-export type GetUserIdByNameQueryVariables = Exact<{
-  name: Scalars['String'];
+export type InsertUserByEmailMutationVariables = Exact<{
+  email: Scalars['String'];
 }>;
 
 
-export type GetUserIdByNameQuery = { __typename?: 'query_root', User: Array<{ __typename?: 'User', id: any }> };
+export type InsertUserByEmailMutation = { __typename?: 'mutation_root', insert_User_one?: { __typename?: 'User', id: any, email: string } | null };
+
+export type GetUserIdByEmailQueryVariables = Exact<{
+  email: Scalars['String'];
+}>;
+
+
+export type GetUserIdByEmailQuery = { __typename?: 'query_root', User: Array<{ __typename?: 'User', id: any }> };
 
 export type GetMoneyByUserIdQueryVariables = Exact<{
   id: Scalars['uuid'];
@@ -1019,8 +1026,8 @@ export type Money_Variance_FieldsResolvers<ContextType = any, ParentType extends
 };
 
 export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
+  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['uuid'], ParentType, ContextType>;
-  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1038,14 +1045,14 @@ export type User_Aggregate_FieldsResolvers<ContextType = any, ParentType extends
 };
 
 export type User_Max_FieldsResolvers<ContextType = any, ParentType extends ResolversParentTypes['User_max_fields'] = ResolversParentTypes['User_max_fields']> = {
+  email?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<Maybe<ResolversTypes['uuid']>, ParentType, ContextType>;
-  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type User_Min_FieldsResolvers<ContextType = any, ParentType extends ResolversParentTypes['User_min_fields'] = ResolversParentTypes['User_min_fields']> = {
+  email?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<Maybe<ResolversTypes['uuid']>, ParentType, ContextType>;
-  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -1140,9 +1147,17 @@ export const UpdateMoneyByUserIdDocument = gql`
   }
 }
     `;
-export const GetUserIdByNameDocument = gql`
-    query getUserIdByName($name: String!) {
-  User(where: {name: {_eq: $name}}) {
+export const InsertUserByEmailDocument = gql`
+    mutation insertUserByEmail($email: String!) {
+  insert_User_one(object: {email: $email}) {
+    id
+    email
+  }
+}
+    `;
+export const GetUserIdByEmailDocument = gql`
+    query getUserIdByEmail($email: String!) {
+  User(where: {email: {_eq: $email}}) {
     id
   }
 }
@@ -1165,8 +1180,11 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     updateMoneyByUserId(variables: UpdateMoneyByUserIdMutationVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<UpdateMoneyByUserIdMutation> {
       return withWrapper((wrappedRequestHeaders) => client.request<UpdateMoneyByUserIdMutation>(UpdateMoneyByUserIdDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'updateMoneyByUserId', 'mutation');
     },
-    getUserIdByName(variables: GetUserIdByNameQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetUserIdByNameQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<GetUserIdByNameQuery>(GetUserIdByNameDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getUserIdByName', 'query');
+    insertUserByEmail(variables: InsertUserByEmailMutationVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<InsertUserByEmailMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<InsertUserByEmailMutation>(InsertUserByEmailDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'insertUserByEmail', 'mutation');
+    },
+    getUserIdByEmail(variables: GetUserIdByEmailQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetUserIdByEmailQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetUserIdByEmailQuery>(GetUserIdByEmailDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getUserIdByEmail', 'query');
     },
     getMoneyByUserId(variables: GetMoneyByUserIdQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetMoneyByUserIdQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetMoneyByUserIdQuery>(GetMoneyByUserIdDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getMoneyByUserId', 'query');
