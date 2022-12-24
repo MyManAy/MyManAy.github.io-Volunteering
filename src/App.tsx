@@ -13,7 +13,8 @@ import NameInput from "./components/NameInput";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
-import { GetUserIdByEmailQuery } from "./backend/generated/graphql";
+import { getUserIdByEmail } from "./backend/graphql/queries";
+import * as gqlDocs from "./backend/graphql/index";
 
 function App() {
   const { user, isAuthenticated } = useAuth0();
@@ -31,7 +32,7 @@ function App() {
     }
   }, [isAuthenticated]);
 
-  const isUserInDB = (queryResult: GetUserIdByEmailQuery) =>
+  const isUserInDB = (queryResult: { User: string | any[] }) =>
     queryResult.User.length === 0;
 
   const updateUserId = () => {
