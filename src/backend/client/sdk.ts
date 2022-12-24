@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as Realm from "realm-web";
 import {
   ApolloClient,
@@ -5,10 +6,15 @@ import {
   HttpLink,
   InMemoryCache,
 } from "@apollo/client";
+=======
+import { GraphQLClient } from "graphql-request";
+import { getSdk } from "../generated/graphql";
+>>>>>>> parent of 0ee4724 (Revert "Revert "removed typescript codegen stuff"")
 
 const endpoint =
   "https://us-east-1.aws.realm.mongodb.com/api/client/v2.0/app/application-0-weajw/graphql";
 
+<<<<<<< HEAD
 // Connect to your MongoDB Realm app
 const app = new Realm.App("application-0-weajw");
 
@@ -41,4 +47,13 @@ export const sdk = new ApolloClient({
     },
   }),
   cache: new InMemoryCache(),
+=======
+const client = new GraphQLClient(endpoint, {
+  headers: {
+    "x-hasura-admin-secret":
+      "PEXc9q6lySrzh2IeMUQTlD9gDG4tt39Qnx721QarVJYAhSUfkXUNSD27xSwG76pt",
+  },
+>>>>>>> parent of 0ee4724 (Revert "Revert "removed typescript codegen stuff"")
 });
+
+export const sdk = getSdk(client);
