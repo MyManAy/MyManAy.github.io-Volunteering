@@ -15,18 +15,22 @@ import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
 import { getUserIdByEmail } from "./backend/graphql/queries";
 import * as gqlDocs from "./backend/graphql/index";
+import { useLazyQuery, useQuery } from "@apollo/client/react";
 
 function App() {
   const { user, isAuthenticated } = useAuth0();
   const [amount, setAmount] = useState(0);
   const email = useRef("");
   const [userId, setUserId] = useState("");
+  const [getUserIdByEmail, { loading, error, data }] = useLazyQuery(
+    gqlDocs.queries.getUserIdByEmail
+  );
 
   useEffect(() => {
     if (isAuthenticated) {
       console.log("ma");
       email.current = user?.email?.toLowerCase()!;
-      updateAmount();
+      //updateAmount();
     } else {
       resetVars();
     }
@@ -35,23 +39,25 @@ function App() {
   const isUserInDB = (queryResult: { User: string | any[] }) =>
     queryResult.User.length === 0;
 
-  const updateUserId = () => {
-    return new Promise((resolve) => {
-      sdk.getUserIdByEmail({ email: email.current }).then((result) => {
-        console.log(sdk.getUserIdByEmail({ email: email.current }));
-        if (!isUserInDB(result)) {
-          sdk.insertUserByEmail({ email: email.current }).then(() => {
-            updateUserId();
-          }); //recursive call
-        } else {
-          const newId = result.User[0].id;
-          console.log(newId);
-          resolve(newId);
-          setUserId(newId);
-        }
-      });
-    });
-  };
+  // const updateUserId = () => {
+  //   return new Promise((resolve) => {
+  //     const userIdPromise = sdk.request(gqlDocs.queries.getUserIdByEmail, {email: email.current});
+  //     userIdPromise.then((result) => {
+  //       console.log(result);
+  //       if (!isUserInDB(result)) {
+  //         const insertUserPromise = sdk.request(gqlDocs.queries.getUserIdByEmail, {email: email.current});
+  //         sdk.insertUserByEmail({ email: email.current }).then(() => {
+  //           updateUserId();
+  //         }); //recursive call
+  //       } else {
+  //         const newId = result.User[0].id;
+  //         console.log(newId);
+  //         resolve(newId);
+  //         setUserId(newId);
+  //       }
+  //     });
+  //   });
+  // };
 
   const resetVars = () => {
     setAmount(0);
@@ -64,21 +70,25 @@ function App() {
       ? Number("-" + amount.substring(2)) // for negative numbers
       : Number(amount.substring(1));
 
-  const updateAmount = async () => {
-    const newId = await updateUserId();
-    console.log(newId);
-    const fetchedAmount: string = (await sdk.getMoneyByUserId({ id: newId }))
-      .Money[0].amount;
-    const amountToNumber = formatAmount(fetchedAmount);
-    setAmount(amountToNumber);
-  };
+  // const updateAmount = async () => {
+  //   const newId = await updateUserId();
+  //   console.log(newId);
+  //   const fetchedAmount: string = (await sdk.getMoneyByUserId({ id: newId }))
+  //     .Money[0].amount;
+  //   const amountToNumber = formatAmount(fetchedAmount);
+  //   setAmount(amountToNumber);
+  // };
 
   const deposit = () => setAmount(amount + 20);
   const withdraw = () => setAmount(amount - 20);
-  const update = async () => {
-    console.log("yea");
-    await sdk.updateMoneyByUserId({ id: userId, newAmount: amount });
-  }; //add subscription logic sometime in future
+  const update = () => {
+    getUserIdByEmail({ variables: { email: email.current } });
+    console.log(data.volunteer._id);
+    console.log(email.current);
+    // console.log("yea");
+    // await sdk.updateMoneyByUserId({ id: userId, newAmount: amount })
+  };
+  // }; //add subscription logic sometime in future
 
   // const handleTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   //   setEmail(event.target.value);

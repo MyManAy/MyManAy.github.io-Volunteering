@@ -1,4 +1,4 @@
-import { gql } from "graphql-request";
+import { gql } from "graphql-tag";
 
 export const updateMoneyByUserId = gql`
   mutation updateMoneyByUserId($id: uuid!, $newAmount: money!) {

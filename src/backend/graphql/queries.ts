@@ -1,9 +1,9 @@
-import { gql } from "graphql-request";
+import { gql } from "graphql-tag";
 
 export const getUserIdByEmail = gql`
   query getUserIdByEmail($email: String!) {
-    User(where: { email: { _eq: $email } }) {
-      id
+    volunteer(query: { email: $email }) {
+      _id
     }
   }
 `;

@@ -4,6 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Auth0Provider } from "@auth0/auth0-react";
+import { ApolloProvider } from "@apollo/client";
+import { sdk } from "./backend/client/sdk";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -18,9 +20,11 @@ root.render(
     clientId={clientId!}
     redirectUri={window.location.origin}
   >
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <ApolloProvider client={sdk}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ApolloProvider>
   </Auth0Provider>
 );
 
