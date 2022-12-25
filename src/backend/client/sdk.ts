@@ -13,7 +13,7 @@ const endpoint =
 const app = new Realm.App("application-0-weajw");
 
 // Gets a valid Realm user access token to authenticate requests
-async function getValidAccessToken() {
+export async function getValidAccessToken() {
   // Guarantee that there's a logged in user with a valid access token
   if (!app.currentUser) {
     // If no user is logged in, log in an anonymous user. The logged in user will have a valid

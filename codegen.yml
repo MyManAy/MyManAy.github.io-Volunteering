@@ -1,10 +1,8 @@
 overwrite: true
-watch: true
 schema:
-  - "https://money.hasura.app/v1/graphql":
-      headers:
-        x-hasura-admin-secret: "PEXc9q6lySrzh2IeMUQTlD9gDG4tt39Qnx721QarVJYAhSUfkXUNSD27xSwG76pt"
-        content-type: ${CONTENT_TYPE:application/json}
+  - "https://us-east-1.aws.realm.mongodb.com/api/client/v2.0/app/application-0-weajw/graphql":
+      config:
+        - fetcher: "src/backend/client/fetcher.ts#fetchData"
 documents: "src/backend/graphql/**/*.gql"
 generates:
   src/backend/generated/graphql.ts:
@@ -12,7 +10,11 @@ generates:
       - "typescript"
       - "typescript-operations"
       - "typescript-resolvers"
-      - "typescript-graphql-request"
+      - "typescript-react-apollo"
+    config:
+      - fetcher: "src/backend/client/fetcher.ts#fetchData"
   ./graphql.schema.json:
     plugins:
       - "introspection"
+    config:
+      - fetcher: "src/backend/client/fetcher.ts#fetchData"
