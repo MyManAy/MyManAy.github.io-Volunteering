@@ -1,0 +1,35 @@
+.background,
+.landingPage {
+  width: 100vw;
+  height: 100vh;
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fec0b2;
+}
+.landingPage {
+  position: relative;
+  flex-shrink: 0;
+}
+.frameDiv {
+  position: relative;
+  background-color: var(--light-text-color1);
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-purple);
+  font-family: var(--font-inter);
+}
+
+.imgWithComponents {
+  position: relative;
+  top: -11.7%;
+  left: -10%;
+}

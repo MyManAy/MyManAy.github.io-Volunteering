@@ -1,0 +1,16 @@
+.formControl {
+  border: 0;
+  font-weight: 600;
+  font-family: var(--font-open-sans);
+  font-size: var(--btn-text1-size);
+  background-color: transparent;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  overflow: hidden;
+}

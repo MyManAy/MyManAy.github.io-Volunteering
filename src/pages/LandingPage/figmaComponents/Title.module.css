@@ -1,0 +1,10 @@
+.title {
+  position: absolute;
+  top: 437px;
+  left: 783px;
+  font-size: var(--font-size-base);
+  font-weight: 800;
+  display: inline-block;
+  width: 798px;
+  height: 75px;
+}

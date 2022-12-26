@@ -1,0 +1,12 @@
+.findYourCommunity {
+  font-weight: 500;
+}
+.description {
+  position: absolute;
+  top: 362px;
+  left: 877px;
+  display: inline-block;
+  width: 609px;
+  height: 59px;
+  font-family: var(--font-inter);
+}
