@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import styles from "./SearchButton.module.css";
+import right from "../images/icn-arrowright-icnxs.svg";
 
 const SearchButton: FunctionComponent = () => {
   return (
@@ -7,11 +8,7 @@ const SearchButton: FunctionComponent = () => {
       <button className={styles.searchButton}>
         <b className={styles.btnText}>Search</b>
 
-        <img
-          className={styles.icnArrowRightIcnXs}
-          alt=""
-          src="../icn-arrowright-icnxs.svg"
-        />
+        <img className={styles.icnArrowRightIcnXs} alt="" src={right} />
       </button>
     </div>
   );
