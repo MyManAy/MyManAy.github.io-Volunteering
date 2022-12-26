@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
 import LoginButton from "./LoginButton";
 import styles from "./NavigationBar.module.css";
-import defaultProfile from "../images/profile.svg";
-import logo from "../images/logo@2x.png";
+import defaultProfile from "./images/profile.svg";
+import logo from "./images/logo@2x.png";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const NavigationBar: FunctionComponent = () => {

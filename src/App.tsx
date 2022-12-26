@@ -24,7 +24,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import FrameComponent from "./pages/FrameComponent";
+import FrameComponent from "./pages/LandingPage/FrameComponent";
 import { useEffect } from "react";
 
 function App() {

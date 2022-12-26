@@ -1,11 +1,18 @@
-query getUserIdByEmail($email: String!) {
-  User(where: { email: { _eq: $email } }) {
-    id
-  }
-}
-
-query getMoneyByUserId($id: uuid!) {
-  Money(where: { userId: { _eq: $id } }) {
-    amount
+query getAll {
+  Opportunity {
+    name
+    Address {
+      city
+      country
+      id
+      state
+      streetAddress
+      zipCode
+    }
+    OpportunityVolunteers {
+      Volunteer {
+        name
+      }
+    }
   }
 }
