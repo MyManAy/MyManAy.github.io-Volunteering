@@ -5,6 +5,7 @@ import React, {
   useState,
 } from "react";
 import "./App.css";
+import { sdk } from "./backend/client/sdk";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
