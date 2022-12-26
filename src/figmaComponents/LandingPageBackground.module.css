@@ -1,0 +1,47 @@
+.cleanupThen2xClipdropEnhanIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+  object-fit: cover;
+}
+.rectangleDiv,
+.rectangleDiv1,
+.rectangleDiv2,
+.rectangleDiv3 {
+  position: absolute;
+  top: 329px;
+  left: 592px;
+  background-color: var(--color-gray-200);
+  width: 735px;
+  height: 108px;
+}
+.rectangleDiv1,
+.rectangleDiv2,
+.rectangleDiv3 {
+  top: 279px;
+  left: 694px;
+  width: 565px;
+  height: 68px;
+}
+.rectangleDiv2,
+.rectangleDiv3 {
+  top: 427px;
+  left: 637px;
+  width: 663px;
+  height: 204px;
+}
+.rectangleDiv3 {
+  top: 20px;
+  left: 875px;
+  width: 785px;
+  height: 44px;
+}
+.landingPageBackground {
+  position: absolute;
+  top: 108px;
+  left: 222px;
+  width: 1920px;
+  height: 1080px;
+}
