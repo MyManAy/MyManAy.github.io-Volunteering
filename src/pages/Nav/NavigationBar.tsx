@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 
 const NavigationBar: FunctionComponent = () => {
   const { isAuthenticated, user } = useAuth0();
+
   const AnimatedProfile = () => (
     <motion.img
       initial={{ left: "100vw" }}
