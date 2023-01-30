@@ -23,8 +23,8 @@ const FrameComponent: FunctionComponent = () => {
         <div className={styles.imgWithComponents}>
           <InitialAnimation duration={0.5} delay={0}>
             <LandingPageBackground />
-            <NavigationBar />
           </InitialAnimation>
+          <NavigationBar />
           <InitialAnimation
             duration={duration}
             delay={delayGenerator.next().value}
