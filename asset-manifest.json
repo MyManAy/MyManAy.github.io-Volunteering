@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/MyManAy.github.io-Volunteering/static/css/main.ca57846c.css",
-    "main.js": "/MyManAy.github.io-Volunteering/static/js/main.970c8af8.js",
+    "main.css": "/MyManAy.github.io-Volunteering/static/css/main.bc348fac.css",
+    "main.js": "/MyManAy.github.io-Volunteering/static/js/main.ba74c73b.js",
     "static/js/787.ce600914.chunk.js": "/MyManAy.github.io-Volunteering/static/js/787.ce600914.chunk.js",
+    "static/media/cleanupthen2x-clipdropenhancetransformed-1@2x.png": "/MyManAy.github.io-Volunteering/static/media/cleanupthen2x-clipdropenhancetransformed-1@2x.a41eeaca84748a28976f.png",
+    "static/media/logo@2x.png": "/MyManAy.github.io-Volunteering/static/media/logo@2x.cc73650226fd22f92106.png",
+    "static/media/profile.svg": "/MyManAy.github.io-Volunteering/static/media/profile.bdf3c500da7a1941a2aea2e0f0e7d3dd.svg",
+    "static/media/inputgroupprepend.svg": "/MyManAy.github.io-Volunteering/static/media/inputgroupprepend.afe87e14ae398c6d4761200876da20e0.svg",
     "index.html": "/MyManAy.github.io-Volunteering/index.html",
-    "main.ca57846c.css.map": "/MyManAy.github.io-Volunteering/static/css/main.ca57846c.css.map",
-    "main.970c8af8.js.map": "/MyManAy.github.io-Volunteering/static/js/main.970c8af8.js.map",
+    "static/media/icn-arrowright-icnxs.svg": "/MyManAy.github.io-Volunteering/static/media/icn-arrowright-icnxs.1a0ef163738f325c314a00b9eaacc576.svg",
+    "main.bc348fac.css.map": "/MyManAy.github.io-Volunteering/static/css/main.bc348fac.css.map",
+    "main.ba74c73b.js.map": "/MyManAy.github.io-Volunteering/static/js/main.ba74c73b.js.map",
     "787.ce600914.chunk.js.map": "/MyManAy.github.io-Volunteering/static/js/787.ce600914.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca57846c.css",
-    "static/js/main.970c8af8.js"
+    "static/css/main.bc348fac.css",
+    "static/js/main.ba74c73b.js"
   ]
 }
