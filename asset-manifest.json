@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MyManAy.github.io-Volunteering/static/css/main.bc348fac.css",
-    "main.js": "/MyManAy.github.io-Volunteering/static/js/main.ba74c73b.js",
+    "main.js": "/MyManAy.github.io-Volunteering/static/js/main.3d76043b.js",
     "static/js/787.ce600914.chunk.js": "/MyManAy.github.io-Volunteering/static/js/787.ce600914.chunk.js",
     "static/media/cleanupthen2x-clipdropenhancetransformed-1@2x.png": "/MyManAy.github.io-Volunteering/static/media/cleanupthen2x-clipdropenhancetransformed-1@2x.a41eeaca84748a28976f.png",
     "static/media/logo@2x.png": "/MyManAy.github.io-Volunteering/static/media/logo@2x.cc73650226fd22f92106.png",
@@ -10,11 +10,11 @@
     "index.html": "/MyManAy.github.io-Volunteering/index.html",
     "static/media/icn-arrowright-icnxs.svg": "/MyManAy.github.io-Volunteering/static/media/icn-arrowright-icnxs.1a0ef163738f325c314a00b9eaacc576.svg",
     "main.bc348fac.css.map": "/MyManAy.github.io-Volunteering/static/css/main.bc348fac.css.map",
-    "main.ba74c73b.js.map": "/MyManAy.github.io-Volunteering/static/js/main.ba74c73b.js.map",
+    "main.3d76043b.js.map": "/MyManAy.github.io-Volunteering/static/js/main.3d76043b.js.map",
     "787.ce600914.chunk.js.map": "/MyManAy.github.io-Volunteering/static/js/787.ce600914.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bc348fac.css",
-    "static/js/main.ba74c73b.js"
+    "static/js/main.3d76043b.js"
   ]
 }
